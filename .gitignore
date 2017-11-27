@@ -4,4 +4,6 @@ img_pool/
 *.map
 *.sass-cache
 **/style/css
-
+id_rsa
+/static/
+/media/

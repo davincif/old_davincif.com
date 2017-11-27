@@ -1,0 +1,10 @@
+@import "variables";
+
+
+#cover {
+	background-image: url($STATIC + "home/imgs/home_background.jpg");
+	color: white;
+	background-size: cover;
+	text-align: center;
+	height: 100%;
+}

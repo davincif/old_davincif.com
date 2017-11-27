@@ -9,6 +9,7 @@
 # https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
+os.path.supports_unicode_filenames = True
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,11 @@ SECRET_KEY = 'r^y1f)r*%ocmm^@p%l1q&!i8lscr0rtr6=@3wmr$zqnt5c#xn5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'192.168.15.14',
+	'localhost',
+	'127.0.0.1'
+	]
 
 
 # Application definition
@@ -122,3 +127,5 @@ STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, 'davincif' + STATIC_URL),
 	os.path.join(BASE_DIR, 'home' + STATIC_URL),
 ]
+
+STATIC_ROOT = os.path.join(os.path.realpath(os.path.dirname(__file__)), "../static")
