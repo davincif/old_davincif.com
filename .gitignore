@@ -1,2 +1,7 @@
 *__pycache__/
 *.pyc
+img_pool/
+.sass-cache/
+logs/
+media/
+static/
