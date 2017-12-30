@@ -1,0 +1,36 @@
+isinFlag=0;
+isin() {
+	local tofind="$1"
+	shift
+	local tosearch=("${@}")
+
+	for elem in "${tosearch[@]}"; do
+		if [ "$elem" == "$tofind" ]; then
+			isinFlag=1;
+			return 0;
+		fi
+	done
+
+	isinFlag=0;
+	return 0;
+}
+
+PATHS={}
+PATHSIZE=0
+BASE="davincif/static/style/scss";
+TOWATCH="";
+
+for path in $(find . -type d -name "static"); do
+	for path in $(find . -type d -name "style"); do
+		isin $path ${PATHS[@]}
+		if [ $isinFlag -eq 0 ]; then
+			PATHS[$PATHSIZE]=$path;
+			let "PATHSIZE = $PATHSIZE +1";
+			TOWATCH="$TOWATCH $path/scss:$path/css"
+		fi
+	done
+done
+
+echo "sass -I $BASE --watch $TOWATCH";
+sass -I $BASE --watch $TOWATCH;
+# add_import_path Sass::CssImporter::Importer.new('sub_directory_a')

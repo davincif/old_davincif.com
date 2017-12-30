@@ -1,0 +1,8 @@
+#cover {
+  background-image: url("/static/home/imgs/home_background.jpg");
+  color: white;
+  background-size: cover;
+  text-align: center;
+  height: 100%; }
+
+/*# sourceMappingURL=home.css.map */

@@ -1,7 +1,8 @@
 *__pycache__/
 *.pyc
 img_pool/
-.sass-cache/
+*.map
+*.sass-cache
+**/style/css
 logs/
 media/
-static/
